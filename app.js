@@ -120,7 +120,9 @@ app.use("/", userRouter)
 
 
 // <---------------------------------------->
-
+app.get('/', (req, res) => {
+  res.redirect('/listings');
+});
 
 //<----- WHEN WRAPASYNC CALLS CATCH(NEXT) THE CONTROL IS SENT HERE BY NEXT ----->
 app.use((err,req,res,next) => {
