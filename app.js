@@ -121,9 +121,6 @@ app.use("/", userRouter)
 
 // <---------------------------------------->
 
-app.all("*", (req,res,next) => {
-    next(new ExpressError(404, "Page Not Found!"))
-})
 
 //<----- WHEN WRAPASYNC CALLS CATCH(NEXT) THE CONTROL IS SENT HERE BY NEXT ----->
 app.use((err,req,res,next) => {
