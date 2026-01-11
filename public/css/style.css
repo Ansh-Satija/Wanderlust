@@ -13,6 +13,7 @@ body{
 .navbar{
     height: 5rem;
     background-color: white;
+    justify-content: space-evenly;
 }
 
 .fa-compass{
@@ -119,4 +120,92 @@ body{
 #map {
     height: 400px;
     width: 91vh;
+}
+
+/* <----- FILTER SCROLLBAR + TAX TOGGLE SWITCH -----> */
+#filter-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+#filters-container {
+  overflow: hidden;
+  flex: 1;
+  position: relative;
+}
+
+#filters {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.filter {
+  flex: 0 0 auto;
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+}
+
+.filter a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.scroll-btn {
+  background-color: #fff;
+  border: 0.1rem solid #cccccc;
+  border-radius: 50%;
+  color: #a6a6a6;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-btn.left-btn {
+  margin-right: 1rem;
+}
+
+.scroll-btn.right-btn {
+  margin-left: 1rem;
+}
+
+.tax-toggle {
+  border: 0.1rem solid #a6a6a6;
+  border-radius: 1rem;
+  height: 3rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  margin-top: 0.9rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* <----- SERVICES SECTION (SHOW.EJS) -----> */
+.offers{
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+}
+
+.offers i {
+  font-size: 1.1rem;
+}
+
+.offers span {
+  font-size: 1.1rem;
 }
