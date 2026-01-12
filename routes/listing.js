@@ -33,6 +33,9 @@ router.route("/")
 //SEARCH REQUEST OF SEARCH BAR
 router.get("/search", listingController.search)
 
+//FILTER ROUTE - FOR FILTER ICONS IN INDEX.EJS
+router.get("/filter/:id", wrapAsync(listingController.filter))
+
 
 //NEW ROUTE
 router.get("/new", isLoggedIn, listingController.renderNewForm)

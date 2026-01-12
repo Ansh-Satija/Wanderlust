@@ -1,8 +1,11 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const mongoUrl = process.env.ATLASDB_URL;
+console.log("Mongo URL =>", mongoUrl); // TEMP debug
+
 
 main()
   .then(() => {
@@ -13,13 +16,13 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(mongoUrl);
 }
 
 const initDB = async () => {
   await Listing.deleteMany({});
   //<----- ADD THE OWNER FIELD IN EACH LISTING DOCUMENT(OBJECT) ----->
-  initData.data = initData.data.map((obj) => ({...obj, owner: "684edc4886ac3222cef128e1"}));
+  initData.data = initData.data.map((obj) => ({...obj, owner: "685a4a54bb5cd59f6ec10be3"}));
   await Listing.insertMany(initData.data);
   console.log("data was initialized");
 };

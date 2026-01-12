@@ -211,3 +211,16 @@ module.exports.reserveListing = async (req, res) => {
   req.flash("success", "Reservation Details sent to your Email!");
   res.redirect(`/listings/${id}`);
 };
+
+//FILTER ROUTE - FOR FILTER ICONS
+module.exports.filter = async (req, res, next) => {
+  let { id } = req.params;
+  let allListings = await Listing.find({ category: { $all: [id] } });
+  if (allListings.length != 0) {
+    res.locals.success = `Listings Filtered by ${id}!`;
+    res.render("listings/index.ejs", { allListings });
+  } else {
+    req.flash("error", `There is no Listing for ${id}!`);
+    res.redirect("/listings");
+  }
+};
