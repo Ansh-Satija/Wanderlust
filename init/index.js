@@ -4,8 +4,6 @@ const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
 const mongoUrl = process.env.ATLASDB_URL;
-console.log("Mongo URL =>", mongoUrl); // TEMP debug
-
 
 main()
   .then(() => {

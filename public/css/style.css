@@ -213,3 +213,25 @@ body{
 .offers span {
   font-size: 1.1rem;
 }
+
+/* <----- RESPONSIVENESS USING MEDIA QUERIES -----> */
+@media (max-width: 768px) {
+  .tax-toggle {
+    flex-basis: 100%;
+    text-align: left;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    font-size: 0.8rem !important;
+    width: auto !important;
+    height: 2rem !important;
+    border: none;
+    justify-content: center;
+  }
+
+  .toggle-container {
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid #a6a6a6;
+    border-radius: 0.7rem;
+  }
+}
+

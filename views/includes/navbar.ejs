@@ -1,27 +1,47 @@
-<style >
+<style>
+    /* Search Button */
     .search-btn {
-        background-color:  #fe424d;
+        background-color: #fe424d;
         color: white;
         border-radius: 25px;
-        padding: 0 1rem 0 1rem;
-        width: 10rem;
+        padding: 0 1rem;
+        white-space: nowrap; /* prevents breaking into two lines */
     }
-    .search-btn:hover {  /* SO THAT STYLING OF THE BUTTON REMAINS SAME EVEN WHEN WE HOVER ON IT */
-        background-color:  #fe424d;
+    .search-btn:hover {
+        background-color: #fe424d;
         color: white;
     }
     .search-btn i {
-        display: inline;
         margin-right: 0.5rem;
     }
 
+    /* Search Input */
     .search-input {
+        font-size: 0.95rem;
         border-radius: 25px;
-        padding: 0.5rem 3rem 0.5rem 3rem;
+        padding: 0.5rem 3rem;
+    }
+
+    /* Collapsed Navbar Background */
+    .navbar-collapse {
+        background: white !important;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    /* Prevent breaking of the 'Airbnb your home' text */
+    .no-wrap {
+        white-space: nowrap;
+    }
+
+    /* Brand styling fix */
+    .navbar-brand i {
+        font-size: 1.6rem;
     }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
 
     <!-- Brand -->
@@ -35,21 +55,29 @@
     </button>
 
     <!-- Collapsible Menu -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse text-center" id="navbarNav">
 
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <!-- Left -->
+      <ul class="navbar-nav web-title">
         <li class="nav-item">
-          <a class="nav-link" href="/listings">Wanderlust</a>
+          <a class="nav-link fw-semibold" href="/listings">Wanderlust</a>
         </li>
       </ul>
 
       <!-- Search Bar -->
-      <div class="flex-grow-1 d-flex justify-content-center">
-        <form class="d-flex mx-md-3 my-2 my-md-0" role="search" action="/listings/search" method="get" id="searchBox">
+      <div class="flex-grow-1 d-flex justify-content-center my-2 my-lg-0">
+        <form class="d-flex" role="search" action="/listings/search" method="get" id="searchBox">
 
-          <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations" 
-            aria-label="Search" name="q" id="mySearchInput" required/>
-          <button class="btn search-btn" type="submit" id="search">
+          <input class="form-control search-input me-2"
+            type="search"
+            placeholder="Search Destinations"
+            aria-label="Search"
+            name="q"
+            id="mySearchInput"
+            required
+          />
+
+          <button class="btn search-btn d-flex align-items-center gap-1" type="submit" id="search">
             <i class="fa-solid fa-magnifying-glass"></i> Search
           </button>
 
@@ -57,9 +85,10 @@
       </div>
 
       <!-- Right Side Buttons -->
-      <ul class="navbar-nav ms-md-3">
-        <li class="nav-item">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+      <ul class="navbar-nav ms-lg-3 text-center">
+
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link no-wrap" href="/listings/new">Airbnb your home</a>
         </li>
 
         <% if (!currUser) { %>
