@@ -53,4 +53,7 @@ router.route("/:id")
 //EDIT ROUTE
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.renderEditForm))
 
+//RESERVE ROUTE - RESERVE BTN IN SHOW.EJS
+router.get("/:id/reserveListing", isLoggedIn, wrapAsync(listingController.reserveListing))
+
 module.exports = router;

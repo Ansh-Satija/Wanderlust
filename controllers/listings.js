@@ -204,3 +204,10 @@ module.exports.search = async (req, res) => {
     res.redirect("/listings");
   }
 };
+
+//RESERVE ROUTE FOR RESERVE BTN IN SHOW.EJS
+module.exports.reserveListing = async (req, res) => {
+  let { id } = req.params;
+  req.flash("success", "Reservation Details sent to your Email!");
+  res.redirect(`/listings/${id}`);
+};
