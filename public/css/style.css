@@ -194,6 +194,10 @@ body{
   cursor: pointer;
 }
 
+.tax-info{
+  display: none;
+}
+
 /* <----- SERVICES SECTION (SHOW.EJS) -----> */
 .offers{
     display: grid;
