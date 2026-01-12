@@ -30,6 +30,9 @@ router.route("/")
     wrapAsync(listingController.createListing)
 )  
 
+//SEARCH REQUEST OF SEARCH BAR
+router.get("/search", listingController.search)
+
 
 //NEW ROUTE
 router.get("/new", isLoggedIn, listingController.renderNewForm)

@@ -39,17 +39,20 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link" href="/listings">Wanderlust</a>
         </li>
       </ul>
 
       <!-- Search Bar -->
       <div class="flex-grow-1 d-flex justify-content-center">
-        <form class="d-flex mx-md-3 my-2 my-md-0" role="search">
-          <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations" />
-          <button class="btn search-btn" type="submit">
+        <form class="d-flex mx-md-3 my-2 my-md-0" role="search" action="/listings/search" method="get" id="searchBox">
+
+          <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations" 
+            aria-label="Search" name="q" id="mySearchInput" required/>
+          <button class="btn search-btn" type="submit" id="search">
             <i class="fa-solid fa-magnifying-glass"></i> Search
           </button>
+
         </form>
       </div>
 
