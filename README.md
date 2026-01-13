@@ -5,7 +5,6 @@
 
 #### Front-end 🌐
 - **Technologies Used**: HTML, CSS, JavaScript, Bootstrap, EJS
-- **Frameworks**: React.js
 - **Features**:
   - 📱 **Responsive Design**: Optimized for various devices
   - 🔍 **User-friendly Interface**: For searching and listing properties
